@@ -33,7 +33,7 @@ public class Bullet : UnitDefault
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    new void FixedUpdate()
     {
         base.FixedUpdate();
         transform.Translate(new Vector3(0, 1)*speed*Time.deltaTime);

@@ -35,6 +35,11 @@ public class FlightUnit : UnitDefault
             Object_Disable();
         }
     }
+    public void ReAwake() {
+
+        nowHealth = maxHealth;
+        this.gameObject.SetActive(true);
+    }
 
     public void Damage(int d) {
 

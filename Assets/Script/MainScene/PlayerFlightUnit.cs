@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerFlightUnit : FlightUnit
 {
     private Rigidbody rb;
     private float speed=10;
@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        base.FixedUpdate();
         transform.Translate(input * Time.deltaTime*speed);
         if (transform.position.y < -y_limit) {
 

@@ -28,7 +28,7 @@ public class UnitDefault : MonoBehaviour
     }
 
 
-    protected void Object_Disable()
+    virtual public void Object_Disable()
     {
         if (DestroyAnimation != null) {
             Instantiate(DestroyAnimation, this.transform.position, Quaternion.identity);

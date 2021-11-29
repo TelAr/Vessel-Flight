@@ -2735,6 +2735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696707202}
+  - component: {fileID: 696707203}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2756,6 +2757,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696707203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696707201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb32e64bd159954d8d9b327e230861c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1074526856}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,7 +4339,6 @@ GameObject:
   - component: {fileID: 1074526863}
   - component: {fileID: 1074526864}
   - component: {fileID: 1074526862}
-  - component: {fileID: 1074526865}
   - component: {fileID: 1074526861}
   m_Layer: 0
   m_Name: Player
@@ -4453,6 +4466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916840f8350f44e43a2c0dfdc21f3f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyAnimation: {fileID: 0}
+  maxHealth: 1
+  nowHealth: 1
   bulletController: {fileID: 1780864836}
 --- !u!114 &1074526863
 MonoBehaviour:
@@ -4485,21 +4501,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1074526865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074526856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e02cf1b746730442b4723caa551f89c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyAnimation: {fileID: 0}
-  maxHealth: 1
-  nowHealth: 1
 --- !u!4 &1083274496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5854789022207724138, guid: 33d55c5e2cbf94543a4cc6700a51d0d7, type: 3}

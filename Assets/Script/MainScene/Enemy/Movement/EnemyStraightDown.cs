@@ -8,7 +8,6 @@ public class EnemyStraightDown : EnemyMovement
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(speed);
     }
 
     // Update is called once per frame

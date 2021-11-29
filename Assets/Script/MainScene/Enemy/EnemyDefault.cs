@@ -14,6 +14,7 @@ public class EnemyDefault : FlightUnit
     public float start_delay = 1;
     public float fire_delay = 1;
     public float bullet_speed = 3;
+    public int score = 100;
 
     public void DefaultSetting() {
 
@@ -32,7 +33,6 @@ public class EnemyDefault : FlightUnit
         {
             this.gameObject.AddComponent<EnemyStraightDown>();
         }
-        nowHealth = maxHealth;
     }
 
     
@@ -44,11 +44,11 @@ public class EnemyDefault : FlightUnit
     }
     public void ReAwake() {
         DefaultSetting();
-        this.gameObject.SetActive(true);
+        base.ReAwake();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    new void FixedUpdate()
     {
         base.FixedUpdate();
 
@@ -78,4 +78,9 @@ public class EnemyDefault : FlightUnit
         }
     }
 
+    override public void Object_Disable() {
+
+        MainGameContoller.score += score;
+        base.Object_Disable();
+    }
 }

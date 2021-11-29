@@ -7,7 +7,7 @@ public abstract class EnemyFireType : MonoBehaviour
 {
 
     protected GameObject ebc;
-    public float bulletSpeed=3;
+    public float bulletSpeed = 3;
 
     private void Awake()
     {

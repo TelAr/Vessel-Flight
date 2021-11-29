@@ -139,7 +139,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Spawn(float x, float y, float rotation, EnemyMovement movement, float moveSpeed, EnemyFireType fireType, float startDelay, float fireDelay, float bulletSpeed) {
 
-        Debug.Log("respawn");
         for (int t = 0; t < gameObject.transform.childCount; t++)
         {
             GameObject enemy = gameObject.transform.GetChild(t).gameObject;
