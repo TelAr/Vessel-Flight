@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float speed=10;
     private Vector3 input;
+    private const float x_limit = 10;
+    private const float y_limit = 5;
 
     public GameObject bulletController;
 
@@ -32,28 +34,36 @@ public class PlayerController : MonoBehaviour
         bulletController.GetComponent<BulletController>().Fire();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy")) {
+
+            this.gameObject.GetComponent<FlightUnit>().Damage(3);
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         transform.Translate(input * Time.deltaTime*speed);
-        if (transform.position.y < -5) {
+        if (transform.position.y < -y_limit) {
 
-            transform.position = transform.position - new Vector3(0, transform.position.y + 5);
+            transform.position = transform.position - new Vector3(0, transform.position.y + y_limit);
         }
-        else if (transform.position.y > 5)
+        else if (transform.position.y > y_limit)
         {
 
-            transform.position = transform.position - new Vector3(0, transform.position.y - 5);
+            transform.position = transform.position - new Vector3(0, transform.position.y - y_limit);
         }
-        if (transform.position.x < -12)
+        if (transform.position.x < -x_limit)
         {
 
-            transform.position = transform.position - new Vector3(transform.position.x + 12, 0);
+            transform.position = transform.position - new Vector3(transform.position.x + x_limit, 0);
         }
-        else if (transform.position.x > 12)
+        else if (transform.position.x > x_limit)
         {
 
-            transform.position = transform.position - new Vector3(transform.position.x - 12, 0);
+            transform.position = transform.position - new Vector3(transform.position.x - x_limit, 0);
         }
     }
 

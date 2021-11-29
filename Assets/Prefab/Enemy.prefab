@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4170769523967687520}
   - component: {fileID: 2202433768878398330}
   - component: {fileID: 3954178151069427923}
-  - component: {fileID: 4409324280665470126}
   - component: {fileID: 763957806774739185}
   m_Layer: 0
   m_Name: Enemy
@@ -97,19 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4409324280665470126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3854635640479648366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806bf9d17f64f0c499b31258b4042103, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!114 &763957806774739185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c138f4a3f6efe745b9b538d778fa420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyAnimation: {fileID: 0}
+  health: 1
   fire_type: {fileID: 0}
   start_delay: 1
   fire_delay: 1

@@ -31,7 +31,6 @@ public class EnemyTargettingFire : EnemyFireType
 
                     bullet.transform.localEulerAngles = new Vector3(0, 0, 360 - Mathf.Rad2Deg * Mathf.Atan(targetVector.x / targetVector.y));
                 }
-                Debug.Log(bullet.transform.localEulerAngles);
                 bullet.GetComponent<Bullet>().speed = bulletSpeed;
                 bullet.SetActive(true);
                 break;
