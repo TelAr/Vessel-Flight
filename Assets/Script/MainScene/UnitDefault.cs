@@ -5,34 +5,35 @@ using UnityEngine;
 public class UnitDefault : MonoBehaviour
 {
 
-    public int health = 1;
 
+    public GameObject DestroyAnimation;
     // Start is called before the first frame update
-    void Awake()
-    {
-        if (health <= 0)
-        {
 
-            health = 1;
-        }
-    }
 
     // Update is called once per frame
-    void Update()
+    protected void FixedUpdate()
     {
 
-        if (health == 0)
+
+        if (Mathf.Abs(transform.position.y) > 12)
         {
 
-            Object_Destroy();
+            gameObject.SetActive(false);
+        }
+        if (Mathf.Abs(transform.position.x) > 15)
+        {
+
+            gameObject.SetActive(false);
         }
     }
 
 
-    private void Object_Destroy()
+    virtual public void Object_Disable()
     {
-
-        //이후 파괴 연출 추가 시 다른 옵션으로 전환
-        Destroy(this.gameObject);
+        if (DestroyAnimation != null) {
+            Instantiate(DestroyAnimation, this.transform.position, Quaternion.identity);
+        }
+        //이후 파괴 연출 추가 후 다른 옵션으로 전환
+        this.gameObject.SetActive(false);
     }
 }

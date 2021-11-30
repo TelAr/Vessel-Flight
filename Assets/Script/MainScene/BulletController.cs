@@ -7,7 +7,7 @@ public class BulletController : MonoBehaviour
     GameObject[] bullets;
 
     public GameObject player;
-
+    public float bulletSpeed = 20;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,6 +27,7 @@ public class BulletController : MonoBehaviour
             if (!bullets[k].activeSelf) {
 
                 bullets[k].transform.position = player.transform.position;
+                bullets[k].GetComponent<Bullet>().speed = bulletSpeed;
                 bullets[k].SetActive(true);
                 return;
             }
