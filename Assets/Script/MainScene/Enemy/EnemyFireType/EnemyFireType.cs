@@ -5,7 +5,6 @@ using UnityEngine;
 //abstract class
 public abstract class EnemyFireType : MonoBehaviour
 {
-
     protected GameObject ebc;
     public float bulletSpeed = 3;
 
