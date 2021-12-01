@@ -10,12 +10,17 @@ public class PlayerFlightUnit : FlightUnit
     private Vector3 input;
     private const float x_limit = 10;
     private const float y_limit = 5;
+    private bool is_invincible;
+    private float invincible_timer;
+    public Material normal, invincible;
 
     public GameObject bulletController;
 
     private void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
+        is_invincible = false;
+        invincible_timer = 0;
     }
 
     // Start is called before the first frame update
@@ -38,14 +43,51 @@ public class PlayerFlightUnit : FlightUnit
     {
         if (other.CompareTag("Enemy")) {
 
-            this.gameObject.GetComponent<FlightUnit>().Damage(3);
+            Damage(3);
         }
+    }
+
+    override public void ReAwake() {
+
+        base.ReAwake();
+        input = new Vector3(0, 0);
+        is_invincible = true;
+    }
+
+    public override void Damage(int d)
+    {
+        if (is_invincible) { 
+        
+        }
+        else
+        {
+            base.Damage(d);
+        }
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         base.FixedUpdate();
+
+        if (is_invincible)
+        {
+            gameObject.GetComponent<Renderer>().material = invincible;
+            invincible_timer += Time.deltaTime;
+            if (invincible_timer > 2f)
+            {
+
+                is_invincible = false;
+                invincible_timer = 0f;
+            }
+        }
+        else {
+
+            gameObject.GetComponent<Renderer>().material = normal;
+        }
+
+
         transform.Translate(input * Time.deltaTime*speed);
         if (transform.position.y < -y_limit) {
 

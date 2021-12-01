@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainGameContoller : MonoBehaviour
 {
@@ -34,9 +35,9 @@ public class MainGameContoller : MonoBehaviour
                     player.transform.position = new Vector3(0, -3f);
                     player.GetComponent<PlayerFlightUnit>().ReAwake();
                 }
-                else { 
-                
-                    //game over event;
+                else {
+
+                    SceneManager.LoadScene("GameOver");
                 }
                 timer = 0;
             }
