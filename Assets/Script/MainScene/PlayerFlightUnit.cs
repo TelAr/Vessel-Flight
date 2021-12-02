@@ -13,14 +13,16 @@ public class PlayerFlightUnit : FlightUnit
     private bool is_invincible;
     private float invincible_timer;
     public Material normal, invincible;
-
+    public AudioSource fire_audio;
     public GameObject bulletController;
 
     private void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
+        fire_audio = this.gameObject.GetComponent<AudioSource>();
         is_invincible = false;
         invincible_timer = 0;
+
     }
 
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class PlayerFlightUnit : FlightUnit
     }
 
     public void OnFire() {
-
+        fire_audio.Play();
         bulletController.GetComponent<BulletController>().Fire();
     }
 

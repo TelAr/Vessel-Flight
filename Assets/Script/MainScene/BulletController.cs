@@ -25,7 +25,6 @@ public class BulletController : MonoBehaviour
         for (int k = 0; k < gameObject.transform.childCount; k++)
         {
             if (!bullets[k].activeSelf) {
-
                 bullets[k].transform.position = player.transform.position;
                 bullets[k].GetComponent<Bullet>().speed = bulletSpeed;
                 bullets[k].SetActive(true);
